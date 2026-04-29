@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: e2e-basic-1777451724338-gitops
+  description: This is GitOps manifest for e2e-basic-1777451724338   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=e2e-basic-1777451724338
+    backstage.io/kubernetes-id: e2e-basic-1777451724338 
+    backstage.io/techdocs-ref: dir:. 
+    jenkins.io/job-full-name: e2e-basic-1777451724338-gitops
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:e2e-basic-1777451724338
